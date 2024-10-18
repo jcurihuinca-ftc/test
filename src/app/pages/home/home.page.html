@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Figuras Geométricas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="figura-selector">
+    <ion-button (click)="seleccionarFigura('circulo')">Seleccionar Círculo</ion-button>
+    <ion-button (click)="seleccionarFigura('triangulo')">Seleccionar Triángulo</ion-button>
+  </div>
+
+  <div class="figura-info" *ngIf="figuraSeleccionada">
+    <h2>Figura Seleccionada: {{ figuraSeleccionada | titlecase }}</h2>
+    <div *ngIf="figuraSeleccionada === 'circulo'">
+      <h3>Información del Círculo</h3>
+      <p>Para calcular el perímetro, ingrese el radio.</p>
+    </div>
+
+    <div *ngIf="figuraSeleccionada === 'triangulo'">
+      <h3>Información del Triángulo</h3>
+      <p>Seleccione el tipo de triángulo:</p>
+      <ion-button (click)="seleccionarFigura('triangulo-escaleno')">Escaleno</ion-button>
+      <ion-button (click)="seleccionarFigura('triangulo-equilatero')">Equilátero</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+<div class="triangulo-container">
+  <h2>Calcular Perímetro de Triángulo</h2>
+
+  <div>
+    <label for="ladoA">Lado A:</label>
+    <input type="number" [(ngModel)]="ladoA" id="ladoA">
+  </div>
+
+  <div *ngIf="tipoTriangulo === 'Escaleno'">
+    <label for="ladoB">Lado B:</label>
+    <input type="number" [(ngModel)]="ladoB" id="ladoB">
+
+    <label for="ladoC">Lado C:</label>
+    <input type="number" [(ngModel)]="ladoC" id="ladoC">
+  </div>
+
+  <button (click)="calcularPerimetroEscaleno()">Calcular Perímetro Escaleno</button>
+  <button (click)="calcularPerimetroEquilatero()">Calcular Perímetro Equilátero</button>
+
+  <div *ngIf="perimetro > 0">
+    <p><strong>Perímetro:</strong> {{ perimetro }}</p>
+    <p><strong>Tipo de Triángulo:</strong> {{ tipoTriangulo }}</p>
+  </div>
+</div>
